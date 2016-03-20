@@ -1,5 +1,6 @@
 :root {
   --donald-size: 120px;
+  --donald-top-padding: 20px;
 }
 
 /* @custom-media --screen-xs-min (min-width: 480px); */

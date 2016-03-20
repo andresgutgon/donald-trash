@@ -11,7 +11,11 @@ class DonaldPreview extends Component {
   render() {
     const { inlineStyles } = this.props;
 
-    return (<div style={inlineStyles} className={this.getClasses()} />);
+    return (
+      <div style={inlineStyles} className={this.getClasses()}>
+        <img src={require('./donald-moving.png')} />
+      </div>
+    );
   }
 }
 

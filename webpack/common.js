@@ -65,7 +65,8 @@ module.exports = function(env) {
         {
           test: /\.html$/,
           loader: 'html-loader'
-        }
+        },
+        { test: /\.(png|jpg)$/, loader: 'file-loader?name=images/[name].[ext]' }
       ],
     },
 

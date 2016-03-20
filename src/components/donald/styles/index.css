@@ -2,18 +2,22 @@
 
 .donaldWrapper {
   position: absolute;
+  padding-top: var(--donald-top-padding);
   left: calc(50% - (var(--donald-size)/2))
 }
 .donald {
   border-radius: 300px;
   height: var(--donald-size);
   width: var(--donald-size);
-  background: red;
+  background: #f0f0f0;
   cursor: move;
+  box-shadow: 0 0px 10px 0px rgba(0, 0, 0 ,0.3);
+  img {
+    width: var(--donald-size);
+  }
 }
 
 .donaldDragPreview {
   composes: donald;
-  border-radius: 0;
   border: 1px solid black;
 }
