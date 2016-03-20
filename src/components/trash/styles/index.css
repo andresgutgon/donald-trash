@@ -7,6 +7,18 @@
   img {
     opacity: 0.5;
   }
+
+  .message {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 1.2em;
+    color: #5DD65D;
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
 }
 
 .trashOver {
@@ -17,8 +29,10 @@
   }
 }
 
+
 .donaldInTrash {
   composes: trash;
+  border-color: #5DD65D;
   img {
     opacity: 1;
   }

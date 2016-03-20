@@ -12,10 +12,16 @@ class WhiteHouse extends Component {
   }
 
   render() {
-    const { connectDropTarget } = this.props;
+    const { connectDropTarget, donaldDropped } = this.props;
+    const dropped = donaldDropped && donaldDropped.target === 'whiteHouse';
 
     return connectDropTarget(
       <div className={this.getClasses()}>
+        {dropped &&
+         <div className={styles.message}>
+          You must be a troll! <img src={require('./trollface.png')} />
+         </div>
+        }
         <img src={require('./white-house.jpg')} />
       </div>
     );

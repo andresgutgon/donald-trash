@@ -12,10 +12,18 @@ class Trash extends Component {
   }
 
   render() {
-    const { connectDropTarget } = this.props;
+    const { connectDropTarget, donaldDropped } = this.props;
+    const dropped = donaldDropped && donaldDropped.target === 'trash';
+
+    console.log('dropped', dropped);
 
     return connectDropTarget(
       <div className={this.getClasses()}>
+        {dropped &&
+          <div className={styles.message}>
+            Thanks! <img src={require('./clap.png')} />
+          </div>
+        }
         <img src={require('./trash.png')} />
       </div>
     );

@@ -51,6 +51,10 @@ class CustomDragLayer extends Component {
     this.setState({dropResult});
   }
 
+  onBeginDrag(dropResult) {
+    this.setState({dropResult: null});
+  }
+
   render() {
     const {
       item,
@@ -65,6 +69,7 @@ class CustomDragLayer extends Component {
         <Donald
           onDropResult={this.onDropResult.bind(this)}
           donaldDropped={dropResult}
+          onBeginDrag={this.onBeginDrag.bind(this)}
         />
         <div className={styles.targetsWrapper}>
           <WhiteHouse donaldDropped={dropResult} />

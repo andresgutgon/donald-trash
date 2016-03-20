@@ -50,6 +50,9 @@ class Donald extends Component {
 
 const dragSourceSpec = {
   beginDrag(props) {
+    const { onBeginDrag } = props;
+
+    onBeginDrag();
     return {};
   },
   endDrag(props, monitor) {

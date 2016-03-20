@@ -8,6 +8,18 @@
   img {
     opacity: 0.5;
   }
+
+  .message {
+    position: absolute;
+    top: 20px;
+    left: 3%;
+    font-size: 1.2em;
+    color: red;
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
 }
 
 .whiteHouseOver {
@@ -20,6 +32,7 @@
 
 .donaldInWhiteHouse {
   composes: whiteHouse;
+  border-color: red;
   img {
     opacity: 1;
   }
