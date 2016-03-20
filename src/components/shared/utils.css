@@ -1,0 +1,11 @@
+.clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
