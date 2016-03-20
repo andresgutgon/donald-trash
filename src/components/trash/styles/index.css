@@ -1,9 +1,16 @@
 .trash {
-  background: green;
-  flex: 0 0 50%;
+  flex: 0 0 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed transparent;
+  margin-left: 2%;
 }
 
 .trashOver {
   composes: trash;
-  background: blue;
+  border-color: #d4d4d4;
+  img {
+    opacity: 0.5;
+  }
 }

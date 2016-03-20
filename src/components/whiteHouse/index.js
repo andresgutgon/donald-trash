@@ -13,7 +13,11 @@ class WhiteHouse extends Component {
   render() {
     const { connectDropTarget } = this.props;
 
-    return connectDropTarget(<div className={this.getClasses()} />);
+    return connectDropTarget(
+      <div className={this.getClasses()}>
+        <img src={require('./white-house.jpg')} />
+      </div>
+    );
   }
 }
 

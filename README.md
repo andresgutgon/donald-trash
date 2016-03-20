@@ -26,3 +26,4 @@ npm run test
 ## Reference
 This boilerplate project is based on [Gaearon's Boilerplate](https://github.com/gaearon/react-transform-boilerplate)
 [React DnD](http://gaearon.github.io/react-dnd)
+Credit of trash picture to [Ramotion](https://dribbble.com/Ramotion)

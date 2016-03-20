@@ -1,11 +1,4 @@
 @import "../../../components/shared/variables.css";
 @import "normalize.css";
 
-.app {
-}
-
-/* @media (--screen-sm-min) { */
-/*   .content { */
-/*     max-width: 600px; */
-/*   } */
-/* } */
+.app {}
