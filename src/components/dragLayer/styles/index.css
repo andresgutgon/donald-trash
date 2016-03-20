@@ -1,3 +1,14 @@
+@import "../../shared/variables.css";
+
+.targetsWrapper {
+  position: absolute;
+  top: calc(var(--donald-size) + 20px);
+  height: 1000px;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+
 .dragLayer {
   position: relative;
 }
