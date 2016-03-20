@@ -9,10 +9,7 @@
     "start": "NODE_ENV=development node devServer.js",
     "clean-source": "rimraf bin README.md .babelrc devServer.js src screenshot.png webpack LICENSE .eslintrc package.json karma.conf.js tests.webpack.js",
     "deploy": "gh-pages-deploy",
-    "lint": "eslint src",
-    "test": "karma start",
-    "test-watch": "karma start --watch",
-    "test-multi": "karma start --single-run=false"
+    "lint": "eslint src"
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
