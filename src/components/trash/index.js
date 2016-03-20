@@ -6,7 +6,8 @@ import styles from './styles/index.css';
 
 class Trash extends Component {
   getClasses() {
-    const { isOver } = this.props;
+    const { isOver, donaldDropped } = this.props;
+    if (donaldDropped && donaldDropped.target === 'trash') return styles.donaldInTrash;
     return isOver ? styles.trashOver : styles.trash;
   }
 
@@ -22,8 +23,11 @@ class Trash extends Component {
 }
 
 const dragTargetSpec = {
-  drop(props) {
-    console.log(props.x, props.y);
+  drop(props, monitor) {
+    return {
+      position: monitor.getSourceClientOffset(),
+      target: 'trash',
+    }
   }
 };
 

@@ -3,7 +3,7 @@
 .donaldWrapper {
   position: absolute;
   padding-top: var(--donald-top-padding);
-  left: calc(50% - (var(--donald-info)/2));
+  left: calc(50% - (var(--donald-size)/2));
   text-align: center;
 }
 .donald {
@@ -25,10 +25,11 @@
 }
 
 .info {
-  font-family: 'Reenie Beanie', cursive;
   color: #444;
-  font-size: 2em;
-  width: 250px;
+  font-size: 1.2em;
+  width: var(--donald-info);
+  position: absolute;
+  left: -calc(var(--donald-size)/2);
   p {
     margin: 0 0 5px 0;
   }

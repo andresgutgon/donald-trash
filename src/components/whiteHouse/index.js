@@ -6,7 +6,8 @@ import styles from './styles/index.css';
 
 class WhiteHouse extends Component {
   getClasses() {
-    const { isOver } = this.props;
+    const { isOver, donaldDropped } = this.props;
+    if (donaldDropped && donaldDropped.target === 'whiteHouse') return styles.donaldInWhiteHouse;
     return isOver ? styles.whiteHouseOver : styles.whiteHouse;
   }
 
@@ -22,8 +23,11 @@ class WhiteHouse extends Component {
 }
 
 const dragTargetSpec = {
-  drop(props) {
-    console.log(props.x, props.y);
+  drop(props, monitor) {
+    return {
+      position: monitor.getSourceClientOffset(),
+      target: 'whiteHouse',
+    }
   }
 };
 

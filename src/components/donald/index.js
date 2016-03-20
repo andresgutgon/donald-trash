@@ -18,19 +18,31 @@ class Donald extends Component {
   }
 
   render() {
-    const { connectDragSource, isDragging } = this.props;
+    const { connectDragSource, isDragging, donaldDropped } = this.props;
     const opacity = isDragging ? 0 : 1;
 
-    const style = {opacity};
+    let style = {
+      opacity,
+      zIndex: 100,
+    };
+    if (donaldDropped) {
+      style = {
+        ...style,
+        top: donaldDropped.position.y,
+        left: donaldDropped.position.x,
+      };
+    }
 
     return connectDragSource(
       <div className={styles.donaldWrapper} style={style}>
         <DonaldPreview />
-        <div className={styles.info}>
-          <span className={styles.dragInfo}>Drag</span>
-          <p>Donald Trump</p>
-          <p>to White House or to ...</p>
-        </div>
+        {!donaldDropped &&
+          <div className={styles.info}>
+            <span className={styles.dragInfo}>Drag</span>
+            <p>Donald Trump</p>
+            <p>to White House or to ...</p>
+          </div>
+        }
       </div>
     );
   }
@@ -39,6 +51,14 @@ class Donald extends Component {
 const dragSourceSpec = {
   beginDrag(props) {
     return {};
+  },
+  endDrag(props, monitor) {
+    const dropResult = monitor.getDropResult();
+
+    if (dropResult) {
+      const { onDropResult } = props;
+      onDropResult(dropResult);
+    }
   }
 };
 

@@ -47,6 +47,10 @@ class CustomDragLayer extends Component {
     }
   }
 
+  onDropResult(dropResult) {
+    this.setState({dropResult});
+  }
+
   render() {
     const {
       item,
@@ -54,13 +58,17 @@ class CustomDragLayer extends Component {
       isDragging,
       getSourceClientOffset,
     } = this.props;
+    const { dropResult } = this.state || {};
 
     return (
       <div className={styles.dragLayer}>
-        <Donald />
+        <Donald
+          onDropResult={this.onDropResult.bind(this)}
+          donaldDropped={dropResult}
+        />
         <div className={styles.targetsWrapper}>
-          <WhiteHouse />
-          <Trash />
+          <WhiteHouse donaldDropped={dropResult} />
+          <Trash donaldDropped={dropResult} />
         </div>
 
         {isDragging && getSourceClientOffset &&

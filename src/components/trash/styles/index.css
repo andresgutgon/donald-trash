@@ -5,12 +5,22 @@
   justify-content: center;
   border: 2px dashed transparent;
   margin-left: 2%;
+  img {
+    opacity: 0.5;
+  }
 }
 
 .trashOver {
   composes: trash;
   border-color: #d4d4d4;
   img {
-    opacity: 0.5;
+    opacity: 1;
+  }
+}
+
+.donaldInTrash {
+  composes: trash;
+  img {
+    opacity: 1;
   }
 }

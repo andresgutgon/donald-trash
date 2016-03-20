@@ -5,12 +5,22 @@
   justify-content: center;
   border: 2px dashed transparent;
   margin-left: 2%;
+  img {
+    opacity: 0.5;
+  }
 }
 
 .whiteHouseOver {
   composes: whiteHouse;
   border-color: #d4d4d4;
   img {
-    opacity: 0.5;
+    opacity: 1;
+  }
+}
+
+.donaldInWhiteHouse {
+  composes: whiteHouse;
+  img {
+    opacity: 1;
   }
 }

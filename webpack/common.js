@@ -81,7 +81,7 @@ module.exports = function(env) {
       new HtmlWebpackPlugin({
         favicon: './src/static/favicon.ico',
         title: 'Donald Trash',
-        template: 'src/index.html',
+        // template: 'src/index.html',
         filename: 'index.html',
         inject: 'body',
       }),
