@@ -83,6 +83,7 @@ module.exports = function(env) {
         title: 'Donald Trash',
         template: 'src/index.html',
         filename: 'index.html',
+        inject: 'body',
       }),
     ]
   };
