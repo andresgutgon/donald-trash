@@ -26,6 +26,11 @@ class Donald extends Component {
     return connectDragSource(
       <div className={styles.donaldWrapper} style={style}>
         <DonaldPreview />
+        <div className={styles.info}>
+          <span className={styles.dragInfo}>Drag</span>
+          <p>Donald Trump</p>
+          <p>to White House or to ...</p>
+        </div>
       </div>
     );
   }

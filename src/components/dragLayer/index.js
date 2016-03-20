@@ -59,8 +59,8 @@ class CustomDragLayer extends Component {
       <div className={styles.dragLayer}>
         <Donald />
         <div className={styles.targetsWrapper}>
-          <Trash />
           <WhiteHouse />
+          <Trash />
         </div>
 
         {isDragging && getSourceClientOffset &&

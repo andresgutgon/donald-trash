@@ -3,7 +3,8 @@
 .donaldWrapper {
   position: absolute;
   padding-top: var(--donald-top-padding);
-  left: calc(50% - (var(--donald-size)/2))
+  left: calc(50% - (var(--donald-info)/2));
+  text-align: center;
 }
 .donald {
   border-radius: 300px;
@@ -12,6 +13,7 @@
   background: #f0f0f0;
   cursor: move;
   box-shadow: 0 0px 10px 0px rgba(0, 0, 0 ,0.3);
+  display: inline-block;
   img {
     width: var(--donald-size);
   }
@@ -20,4 +22,18 @@
 .donaldDragPreview {
   composes: donald;
   border: 1px solid black;
+}
+
+.info {
+  font-family: 'Reenie Beanie', cursive;
+  color: #444;
+  font-size: 2em;
+  width: 250px;
+  p {
+    margin: 0 0 5px 0;
+  }
+  span.dragInfo {
+    font-size: 2.2em;
+    display: block;
+  }
 }
