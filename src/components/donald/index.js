@@ -21,13 +21,12 @@ class Donald extends Component {
     const { connectDragSource, isDragging } = this.props;
     const opacity = isDragging ? 0 : 1;
 
-    const style = {
-      opacity,
-      display: 'inline-block',
-    };
+    const style = {opacity};
 
     return connectDragSource(
-        <div style={style}><DonaldPreview /></div>
+      <div className={styles.donaldWrapper} style={style}>
+        <DonaldPreview />
+      </div>
     );
   }
 }

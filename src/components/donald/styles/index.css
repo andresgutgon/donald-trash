@@ -1,3 +1,6 @@
+.donaldWrapper {
+  position: absolute;
+}
 .donald {
   border-radius: 200px;
   height: 100px;
