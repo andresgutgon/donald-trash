@@ -9,8 +9,18 @@ import DonaldPreview from '../donald/Preview';
 import Trash from '../trash';
 import WhiteHouse from '../whiteHouse';
 
-function getItemStyles(currentOffset) {
-  const { x, y } = currentOffset;
+function getItemStyles(props) {
+  const {
+    getSourceClientOffset,
+    getDifferenceFromInitialOffset,
+  } = props;
+  const { x, y } = getSourceClientOffset;
+
+  // let yPosition = getSourceClientOffset.y;
+  // if (getDifferenceFromInitialOffset.x) {
+  //   yPosition = yPosition - 100;
+  // }
+
   const transform = `translate(${x}px, ${y}px)`;
 
   return {
@@ -18,7 +28,6 @@ function getItemStyles(currentOffset) {
     WebkitTransform: transform,
     zIndex: 1,
     position: 'relative',
-    cursor: 'move',
   };
 }
 
@@ -30,7 +39,7 @@ class CustomDragLayer extends Component {
     case BAD_PERSON:
       return (
         <DonaldPreview
-        inlineStyles={getItemStyles(getDifferenceFromInitialOffset)}
+        inlineStyles={getItemStyles(this.props)}
           isDragPreview={true}
         />
       );
@@ -42,14 +51,14 @@ class CustomDragLayer extends Component {
       item,
       itemType,
       isDragging,
-      currentOffset,
-      getDifferenceFromInitialOffset,
+      getSourceClientOffset,
     } = this.props;
 
+    // {this.renderItem('BAD_PERSON', item)}
     return (
       <div className={styles.dragLayer}>
         <Donald />
-        {isDragging && getDifferenceFromInitialOffset && this.renderItem(itemType, item)}
+        {isDragging && getSourceClientOffset && this.renderItem(itemType, item)}
         <div style={{position: 'absolute', top: 120, right: 0, left: 0}}>
           <Trash />
           <WhiteHouse />
@@ -64,7 +73,10 @@ function collect(monitor) {
   return {
     item: monitor.getItem(),
     itemType: monitor.getItemType(),
-    currentOffset: monitor.getSourceClientOffset(),
+    getClientOffset: monitor.getClientOffset(),
+    getInitialClientOffset: monitor.getInitialClientOffset(),
+    getInitialSourceClientOffset: monitor.getInitialSourceClientOffset(),
+    getSourceClientOffset: monitor.getSourceClientOffset(),
     getDifferenceFromInitialOffset: monitor.getDifferenceFromInitialOffset(),
     isDragging: monitor.isDragging()
   };

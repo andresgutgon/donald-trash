@@ -23,6 +23,7 @@ class Donald extends Component {
 
     const style = {
       opacity,
+      display: 'inline-block',
     };
 
     return connectDragSource(

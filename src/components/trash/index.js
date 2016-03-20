@@ -30,4 +30,8 @@ function collect(connect, monitor) {
   };
 }
 
-export default DropTarget(CONSTANTS.DRAGSOURCE_TYPES.BAD_PERSON, dragTargetSpec, collect)(Trash);
+export default DropTarget(
+  CONSTANTS.DRAGSOURCE_TYPES.BAD_PERSON,
+  dragTargetSpec,
+  collect
+)(Trash);
