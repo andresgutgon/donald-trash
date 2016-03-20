@@ -1,20 +1,8 @@
 :root {
-  --app-color: #596177;
-  --app-color-dark: #4B5265;
-  --app-color-alt: #FF0090;
-  --metric-bg: #61697E;
-  --metric-bg-light: #6E758A;
-
-  --metric-xs-width: 45%;
-  --metric-xs-padding: 2%;
-  --metric-normal-width: 28%;
-  --metric-normal-padding: 2%;
-
-  --font-size-header: 0.9em;
-  --line-height-header: 1.3;
+  --app-color: white;
 }
 
-@custom-media --screen-xs-min (min-width: 480px);
-@custom-media --screen-sm-min (min-width: 768px);
-@custom-media --screen-md-min (min-width: 992px);
-@custom-media --screen-lg-min (min-width: 1200px);
+/* @custom-media --screen-xs-min (min-width: 480px); */
+/* @custom-media --screen-sm-min (min-width: 768px); */
+/* @custom-media --screen-md-min (min-width: 992px); */
+/* @custom-media --screen-lg-min (min-width: 1200px); */

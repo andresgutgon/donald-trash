@@ -1,0 +1,33 @@
+import React, { Component } from 'react';
+import { DropTarget } from 'react-dnd';
+
+import CONSTANTS from '../../constants';
+import styles from './styles/index.css';
+
+class WhiteHouse extends Component {
+  getClasses() {
+    const { isOver } = this.props;
+    return isOver ? styles.whiteHouseOver : styles.whiteHouse;
+  }
+
+  render() {
+    const { connectDropTarget } = this.props;
+
+    return connectDropTarget(<div className={this.getClasses()} />);
+  }
+}
+
+const dragTargetSpec = {
+  drop(props) {
+    console.log(props.x, props.y);
+  }
+};
+
+function collect(connect, monitor) {
+  return {
+    connectDropTarget: connect.dropTarget(),
+    isOver: monitor.isOver()
+  };
+}
+
+export default DropTarget(CONSTANTS.DRAGSOURCE_TYPES.BAD_PERSON, dragTargetSpec, collect)(WhiteHouse);

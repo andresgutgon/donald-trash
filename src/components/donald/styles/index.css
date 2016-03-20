@@ -1,0 +1,13 @@
+.donald {
+  border-radius: 200px;
+  height: 100px;
+  width: 100px;
+  background: red;
+  cursor: move;
+}
+
+.donaldDragPreview {
+  composes: donald;
+  border-radius: 0;
+  border: 1px solid black;
+}

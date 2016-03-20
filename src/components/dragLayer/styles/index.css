@@ -1,0 +1,7 @@
+.dragLayer {
+  position: relative;
+}
+
+.itemPreview {
+  position: absolute;
+}
