@@ -19,7 +19,7 @@ class Donald extends Component {
 
   render() {
     const { connectDragSource, isDragging, donaldDropped } = this.props;
-    const opacity = isDragging ? 0.3 : 1;
+    const opacity = isDragging ? 0 : 1;
 
     let style = {
       opacity,
